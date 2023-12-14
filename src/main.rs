@@ -21,7 +21,7 @@ use plotters::prelude::*;
 fn main() {
     let  T = 1000;
     let  N = 200;
-    if N < T {
+    if N > T {
         panic!("Come on! Too little rounds!!");
     }
     //generate the input data, every arm holds different average values
@@ -37,14 +37,16 @@ fn main() {
     // plot the data
 
     let root = BitMapBackend::new("figures/regret.png", (640, 480)).into_drawing_area();
-    root.fill(&WHITE);
-    let mut chart = ChartBuilder::on(&root)
-        .caption("regret", ("sans-serif", 40).into_font())?;
-    chart
-        .x_labels(5).y_labels(5).draw()?;
 
 
-    root.present()?;
-    Ok(());
+    // root.fill(&WHITE);
+    // let mut chart = ChartBuilder::on(&root)
+    //     .caption("regret", ("sans-serif", 40).into_font())?;
+    // chart
+    //     .x_labels(5).y_labels(5).draw()?;
+
+
+    root.present();
+    // Ok::<(), E>(());
 }
 
