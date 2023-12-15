@@ -1,12 +1,10 @@
 #![allow(non_snake_case)]
-
 mod bestSolution;
 mod FTL;
 mod MWU;
 mod AdaptiveMWU;
 
 #[macro_use]
-
 extern crate rand;
 extern crate ndarray;
 extern crate ndarray_rand;
@@ -17,6 +15,8 @@ use ndarray_rand::rand_distr::Uniform;
 use ndarray::prelude::*;
 use ndarray::{OwnedArcRepr, OwnedRepr};
 use plotters::prelude::*;
+// use yew::prelude::*;
+use charming::{component::{Axis, Title}, element::AxisType, series::Line, Chart};
 
 fn main() {
     let  T = 1000;
@@ -34,19 +34,22 @@ fn main() {
     // println!("{:?}", offline_data);
     //get the best solution
     let best_solution = bestSolution::best_solution_loss(&mut offline_data);
+    let FTL = FTL::FTL_Algorithm_loss(&mut offline_data);
+    let MWU = MWU::MWU_algorithm(&mut offline_data);
+    let AdaptiveMWU = AdaptiveMWU::Adaptive_MWU_algorithm(&mut offline_data);
     // plot the data
 
-    let root = BitMapBackend::new("figures/regret.png", (640, 480)).into_drawing_area();
-
-
-    // root.fill(&WHITE);
-    // let mut chart = ChartBuilder::on(&root)
-    //     .caption("regret", ("sans-serif", 40).into_font())?;
-    // chart
-    //     .x_labels(5).y_labels(5).draw()?;
-
-
-    root.present();
+    // let root = BitMapBackend::new("figures/regret.png", (640, 480)).into_drawing_area();
+    // let graph = yew_hooks::use_async::<_, _, ()>({
+    //
+    // });
+    //
+    // let renderer = WasmRenderer::new(600,400);
+    // async move {
+    //     renderer.render("chart", &chart).unwarp();
+    //     Ok(());
+    // }
+    // root.present();
     // Ok::<(), E>(());
 }
 
