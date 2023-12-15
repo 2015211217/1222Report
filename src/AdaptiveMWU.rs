@@ -23,7 +23,7 @@ pub fn Adaptive_MWU_algorithm(input_data: &mut Array2<f64>) -> Array1<f64> {
 
         // let mut eta = sqrtf32(logf32(N) / (1 ));
         //choose an arm and get feedback
-        
+
         Adaptive_MWU_loss[_i] = Adaptive_MWU_single;
         //renew weight
         let mut entropy = 0.;
