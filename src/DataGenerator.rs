@@ -15,7 +15,7 @@ pub fn data_generator(N: usize, T:usize, C:f64) -> Array2<f64> {
     for _i in 0..T {
         //stochastic data generator
         let array = Array::random( N , Uniform::new(0., 1.));
-        offline_data.push_row((&array).into()).unwrap();
+        offline_data_stochastic.push_row((&array).into()).unwrap();
     }
     //adversarial data generator
     let mut delta = 0.05;

@@ -19,7 +19,8 @@ use plotters::prelude::*;
 // use yew::prelude::*;
 use charming::{component::{Axis, Title}, element::AxisType, series::Line, Chart};
 use std::fs::{File, OpenOptions};
-use std::io::Write;
+use std::io::{Write, BufWriter, IoSlice};
+
 
 fn main() {
     let  T = 1000;
@@ -42,14 +43,48 @@ fn main() {
     let AdaptiveMWU_loss = AdaptiveMWU::Adaptive_MWU_algorithm(offline_data.clone()) - best_solution.clone();
 
     // plot the data
-    println!("{:?}", FTL_loss);
-    println!("{:?}", MWU_loss);
-    println!("{:?}", AdaptiveMWU_loss);
+    println!("{}", FTL_loss);
+    println!("{}", MWU_loss);
+    println!("{}", AdaptiveMWU_loss);
+
+    // let mut stream = BufWriter::new(FTL_loss).unwrap();
     let mut file = File::create("Regret.txt").unwrap();
-    file.write( FTL_loss)?;
-    file = OpenOptions::new().append(true).open("Regret.txt")?;
-    file.write(MWU_loss)?;
-    file.write(AdaptiveMWU_loss)?;
+    file.write(b"[");
+    for _i in 0..T {
+        let s1 = format!("{}, ", FTL_loss[_i]);
+        file.write(s1.as_bytes());
+    }
+    file.write(b"]");
+    file.write(b"\n");
+    file.write(b"[");
+    for _i in 0..T {
+        let s2 = format!("{}, ", MWU_loss[_i]);
+        file.write(s2.as_bytes());
+    }
+    file.write(b"]");
+    file.write(b"\n");
+    file.write(b"[");
+    for _i in 0..T {
+        let s3 = format!("{}, ", AdaptiveMWU_loss[_i]);
+        file.write(s3.as_bytes());
+    }
+    file.write(b"]");
+    // // for _i in 0..T {
+    // //     for _j in 0..N {
+    // //         file.write(FTL_loss[[_i, _j]]);
+    // //     }
+    // // }
+    // let io_slice1 = IoSlice::new(FTL_loss);
+    // file.write_all(&io_slice1);
+    //
+    // file.write(b"Hello World!");
+    //
+    // // file.write(FTL_loss)?;
+    // file = OpenOptions::new().append(true).open("Regret.txt").unwrap();
+    // file.write(b"Hello World!");
+
+    // file.write(MWU_loss)?;
+    // file.write(AdaptiveMWU_loss)?;
     // let root = BitMapBackend::new("figures/regret.png", (640, 480)).into_drawing_area();
     // let graph = yew_hooks::use_async::<_, _, ()>({
     //
