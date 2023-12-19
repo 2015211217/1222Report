@@ -1,7 +1,0 @@
-/Users/jiangxuanke/Desktop/1222Report/target/debug/deps/libdirs_sys_next-476dbe367e7caab2.rmeta: /Users/jiangxuanke/.cargo/registry/src/index.crates.io-6f17d22bba15001f/dirs-sys-next-0.1.2/src/lib.rs
-
-/Users/jiangxuanke/Desktop/1222Report/target/debug/deps/libdirs_sys_next-476dbe367e7caab2.rlib: /Users/jiangxuanke/.cargo/registry/src/index.crates.io-6f17d22bba15001f/dirs-sys-next-0.1.2/src/lib.rs
-
-/Users/jiangxuanke/Desktop/1222Report/target/debug/deps/dirs_sys_next-476dbe367e7caab2.d: /Users/jiangxuanke/.cargo/registry/src/index.crates.io-6f17d22bba15001f/dirs-sys-next-0.1.2/src/lib.rs
-
-/Users/jiangxuanke/.cargo/registry/src/index.crates.io-6f17d22bba15001f/dirs-sys-next-0.1.2/src/lib.rs:

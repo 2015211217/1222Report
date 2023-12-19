@@ -3,9 +3,9 @@ use ndarray_rand::{RandomExt, SamplingStrategy};
 use ndarray_rand::rand_distr::Uniform;
 use ndarray::prelude::*;
 use ndarray::{OwnedArcRepr, OwnedRepr};
-use plotters::prelude::*;
+// use plotters::prelude::*;
 // use yew::prelude::*;
-use charming::{component::{Axis, Title}, element::AxisType, series::Line, Chart};
+// use charming::{component::{Axis, Title}, element::AxisType, series::Line, Chart};
 
 pub fn data_generator(N: usize, T:usize, C:f64) -> Array2<f64> {
     let mut offline_data = Array2::zeros((T, N));

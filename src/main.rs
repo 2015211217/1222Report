@@ -9,19 +9,18 @@ mod DataGenerator;
 extern crate rand;
 extern crate ndarray;
 extern crate ndarray_rand;
-extern crate plotters;
+// extern crate plotters;
 extern crate gurobi;
 
 use ndarray_rand::{RandomExt, SamplingStrategy};
 use ndarray_rand::rand_distr::Uniform;
 use ndarray::prelude::*;
 use ndarray::{OwnedArcRepr, OwnedRepr};
-use plotters::prelude::*;
+// use plotters::prelude::*;
 // use yew::prelude::*;
-use charming::{component::{Axis, Title}, element::AxisType, series::Line, Chart};
+// use charming::{component::{Axis, Title}, element::AxisType, series::Line, Chart};
 use std::fs::{File, OpenOptions};
 use std::io::{Write, BufWriter, IoSlice};
-use gurobi::*;
 
 
 fn main() {
