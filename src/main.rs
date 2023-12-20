@@ -10,7 +10,7 @@ extern crate rand;
 extern crate ndarray;
 extern crate ndarray_rand;
 // extern crate plotters;
-extern crate gurobi;
+// extern crate gurobi;
 
 use ndarray_rand::{RandomExt, SamplingStrategy};
 use ndarray_rand::rand_distr::Uniform;
@@ -41,12 +41,12 @@ fn main() {
     let best_solution = bestSolution::best_solution_loss(offline_data.clone());
     let FTL_loss = FTL::FTL_Algorithm_loss(offline_data.clone()) - best_solution.clone();
     let MWU_loss = MWU::MWU_algorithm( offline_data.clone()) - best_solution.clone();
-    let AdaptiveMWU_loss = AdaptiveMWU::Adaptive_MWU_algorithm(offline_data.clone()) - best_solution.clone();
+    // let AdaptiveMWU_loss = AdaptiveMWU::Adaptive_MWU_algorithm(offline_data.clone()) - best_solution.clone();
 
     // plot the data
     println!("{}", FTL_loss);
     println!("{}", MWU_loss);
-    println!("{}", AdaptiveMWU_loss);
+    // println!("{}", AdaptiveMWU_loss);
 
     // let mut stream = BufWriter::new(FTL_loss).unwrap();
     let mut file = File::create("Regret.txt").unwrap();
