@@ -32,9 +32,7 @@ fn main() {
     }
     //generate the input data, every arm holds different average values
     //new generating technics
-
     let offline_data = DataGenerator::data_generator(N, T, C);
-
     //check the input data
     // println!("{:?}", offline_data);
     //get the best solution
@@ -42,12 +40,10 @@ fn main() {
     let FTL_loss = FTL::FTL_Algorithm_loss(offline_data.clone()) - best_solution.clone();
     let MWU_loss = MWU::MWU_algorithm( offline_data.clone()) - best_solution.clone();
     // let AdaptiveMWU_loss = AdaptiveMWU::Adaptive_MWU_algorithm(offline_data.clone()) - best_solution.clone();
-
     // plot the data
     println!("{}", FTL_loss);
     println!("{}", MWU_loss);
     // println!("{}", AdaptiveMWU_loss);
-
     // let mut stream = BufWriter::new(FTL_loss).unwrap();
     let mut file = File::create("Regret.txt").unwrap();
     file.write(b"[");
@@ -63,13 +59,13 @@ fn main() {
         file.write(s2.as_bytes());
     }
     file.write(b"]");
-    file.write(b"\n");
-    file.write(b"[");
-    for _i in 0..T {
-        let s3 = format!("{}, ", AdaptiveMWU_loss[_i]);
-        file.write(s3.as_bytes());
-    }
-    file.write(b"]");
+
+    // file.write(b"[");
+    // for _i in 0..T {
+    //     let s3 = format!("{}, ", AdaptiveMWU_loss[_i]);
+    //     file.write(s3.as_bytes());
+    // }
+    // file.write(b"]");
     // // for _i in 0..T {
     // //     for _j in 0..N {
     // //         file.write(FTL_loss[[_i, _j]]);
