@@ -9,6 +9,7 @@ mod DataGenerator;
 extern crate rand;
 extern crate ndarray;
 extern crate ndarray_rand;
+extern crate grb;
 // extern crate plotters;
 // extern crate gurobi;
 

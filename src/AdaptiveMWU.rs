@@ -1,14 +1,18 @@
 // #![allow(non_snake_case)]
 //
-// use ndarray::prelude::*;
-// use ndarray::OwnedRepr;
-// use ndarray_stats::{Quantile1dExt, QuantileExt};
-// use std::f64::consts::E;
-// use ndarray_rand::rand_distr::num_traits::real::Real;
-// use rand::Rng;
-// use std::cmp::min;
-// use gurobi::*;
-// // use good_lp::{constraint};
+use ndarray::prelude::*;
+use ndarray::OwnedRepr;
+use ndarray_stats::{Quantile1dExt, QuantileExt};
+use std::f64::consts::E;
+use ndarray_rand::rand_distr::num_traits::real::Real;
+use rand::Rng;
+use std::cmp::min;
+// use good_lp::{constraint};
+// use grb::preclude::*;
+
+// let mut model = Model::new("model1")?;
+
+
 //
 //
 // pub fn Adaptive_MWU_algorithm(input_data: Array2<f64>) -> Array1<f64> {
