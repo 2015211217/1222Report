@@ -1,0 +1,2 @@
+cargo:rustc-link-search=native=/Library/gurobi1100/macos_universal2/lib
+cargo:rustc-link-lib=gurobi110

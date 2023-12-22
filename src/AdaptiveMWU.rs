@@ -8,9 +8,8 @@ use ndarray_rand::rand_distr::num_traits::real::Real;
 use rand::Rng;
 use std::cmp::min;
 // use good_lp::{constraint};
-// use grb::preclude::*;
+use grb;
 
-// let mut model = Model::new("model1")?;
 
 
 //

@@ -7,7 +7,6 @@ name = "BOBWFullInformationFlashback"
 version = "0.1.0"
 dependencies = [
  "grb",
- "grb-sys2 9.5.0",
  "gurobi",
  "ndarray",
  "ndarray-rand",
@@ -108,7 +107,7 @@ dependencies = [
  "csv",
  "fnv",
  "grb-macro",
- "grb-sys2 0.1.1",
+ "grb-sys2",
  "proc-macro2",
  "quote",
  "serde",
@@ -131,12 +130,6 @@ name = "grb-sys2"
 version = "0.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e8817a3a69c46001315c9fd66f5971882137c46587b3c700adf5ac8d07176344"
-
-[[package]]
-name = "grb-sys2"
-version = "9.5.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1332e403483566804e38e5f93326d19b9a806b24d4a420d0261eb7b448059400"
 
 [[package]]
 name = "gurobi"
